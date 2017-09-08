@@ -1,0 +1,18 @@
+#1st code is collecting the sensor reading and measuring the garbage levels 
+ and sending the GPS location of the particular dustbin to the main server 
+through IoT platform Dweet. After receiving the co-ordinates the server uses 
+it to loacte the place to show the directions for the person to go collect 
+garbage.  
+#Here we will be getting the coordinates from the cloud
+#getting address of a place from google maps from its GPS co-ordinates
+import requests
+URL = "http://maps.googleapis.com/maps/api/geocode/json"
+location = "12.923708,77.498731"
+PARAMS = {'address':location}
+r = requests.get(url = URL, params = PARAMS)
+data = r.json()
+address_f = data['results'][0]['formatted_address']
+print(address_f)
+# output is Administrative Block Rd,
+# RV Vidyaniketan, Mailasandra, Bengaluru, Karnataka 560059, India
+ 
