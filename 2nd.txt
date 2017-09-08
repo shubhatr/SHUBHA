@@ -1,0 +1,15 @@
+#receiving data from cloud
+import dweepy
+i=0
+while i<10:
+    p=dweepy.get_latest_dweet_for('shishi')
+    s=str(p)
+    r=s.replace("{u'content': {u'distance': ","")
+    y=r.replace("}, u'thing': u'shishi', u'created': u'2017-09-08T18:52:16.481Z'}","")
+    n=len(y)
+    c=list(y)
+    i=i+1
+    print(y)
+i = 0
+#for i in range 0 to n:
+ #   m=ord(c[i]) - 48
