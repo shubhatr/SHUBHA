@@ -6,12 +6,13 @@ GPIO.setmode(GPIO.BCM)
 TRIG = 23                                  
 ECHO = 24                                  
 
-print "measuring thr distance"
+print "measuring the distance"
 GPIO.setup(TRIG,GPIO.OUT)                  
 GPIO.setup(ECHO,GPIO.IN)                   
-
+i=0
 while True:
-
+ while i < 1000
+  time.sleep(100)  
   GPIO.output(TRIG, False)                 
   
   time.sleep(1)                            
@@ -31,8 +32,6 @@ while True:
   distance = duration * 17150        
   distance = round(distance, 2)            
 
-  if distance > 4 and distance < 200:      
+  if distance > 1 and distance < 10:      
     print "Distance:",distance - 0.5 
-                     
-
-  dweepy.dweet_for( 'shishi', {'distance':distance})
+    dweepy.dweet_for( 'shishi', {'coordinates':'12.923537,77.499047'})#GPS Coordinates of RVCE Admin Block
